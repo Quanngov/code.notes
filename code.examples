@@ -1,4 +1,20 @@
-for (int i = 0; i > 5; i++)
+Если поле public - оно должно называться с заглавной буквы
+Если поле private - то с маленькой буквы и с нижнем подчеркиванием
+
+// Пример здоровья игрока //
+
+[SerializeField] private float _health;
+[SerializeField] private Transform _transform;
+
+public bool IsAlive => _health > 0;  // Свойство IsAlive возвращает false или true в зависимости от значение _health
+
+public float Health => _health;
+
+
+public void ApplyDamage(float damage)
 {
-  Some code here
-}
+  if (damage < 0)
+    throw new ArgumentOutOfRangeException(nameof(damage));
+    
+    _health -= damage;
+{
