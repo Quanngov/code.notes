@@ -8,7 +8,7 @@
 
 public bool IsAlive => _health > 0;  // Свойство IsAlive возвращает false или true в зависимости от значение _health
 
-public float Health => _health;
+public float Health => _health; // Если необходимо менять значение _health в инспекторе
 
 
 public void ApplyDamage(float damage)
@@ -18,3 +18,8 @@ public void ApplyDamage(float damage)
     
     _health -= damage;
 {
+
+public bool IsAlive() // Возвращает true, если _health больше нуля и false, если меньше
+{
+  return _health >= 0;
+}
